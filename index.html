@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Tutorial</title>
+    <style>
+        .btnStyle {
+            border: none;
+            padding: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: grey;
+        }
+        .secondaryStyle {
+            color: red;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+        <button type="button" name="button" v-bind:class="{btnStyle:isActive, secondaryStyle: changeStyle}"
+        @click="changeStyle = !changeStyle">Click me</button>
+
+
+        <h2>List rendering</h2>
+        <ul>
+            <li v-for="fruit in listItems">{{ fruit }}</li> 
+        </ul>
+
+
+        <h2>Vue Component</h2>
+        <counter-btn></counter-btn>
+        <counter-btn></counter-btn>
+        <br>
+        <br>
+        First Name : <input type="text" v-model="fname" placeholder="Enter your name"><br><br>
+        Last Name : <input type="text" v-model="lname" placeholder="Enter your name"><br><br>
+        <p>Full Name : {{ fullName }}</p><br>
+
+
+        Male : <input type="radio" name="gender" v-model="gender" v-bind:value="a"><br>
+        Female : <input type="radio" name="gender" v-model="gender" v-bind:value="b"><br>
+        <p>Your Gender : {{ gender }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="vue.js"></script>
+</body>
+</html>
